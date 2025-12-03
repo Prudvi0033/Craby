@@ -1,17 +1,14 @@
 import figlet from "figlet";
 import { createColors } from "colorette";
+import type { Header_Reponse } from "../types/types";
 
-interface Header {
-    title: String,
-    subtitle: String,
-    instructions: String
-}
+
 
 const { cyanBright, magentaBright, yellowBright, gray } = createColors({
   useColor: true,
 });
 
-export const Header = async (): Promise<Header> => {
+export const Header = async (): Promise<Header_Reponse> => {
   // Clean + readable FIGlet banner
   const title = cyanBright(
     figlet.textSync("Craby", {
